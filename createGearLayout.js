@@ -37,8 +37,9 @@ function createGearsLayout(gearsAvailable = []){
                         
                     })
                 })
-        
             })
+            // console.log('layout 0', gearsLayout[0].length)
+
         }
         else if(layout == 'layout_1'){
             gearsAvailable.forEach((a0 ,a0i)=>{
@@ -72,24 +73,28 @@ function createGearsLayout(gearsAvailable = []){
                     })
                 })
             })
+            // console.log('layout 1', gearsLayout[1].length)
+
         }
         else if(layout == 'layout_2'){
             gearsAvailable.forEach((a1 ,a1i)=>{
-                const remainingGears = [...gearsAvailable]
-                remainingGears.splice(a1i, 1)
+                const gearsB0Available = [...gearsAvailable]
+                gearsB0Available.splice(a1i, 1)
         
                 let gearCombination = {a:[undefined ,a1]}
                 
-                remainingGears.forEach((b0, b0i)=>{
-                    remainingGears.splice(b0i, 1)
+                gearsB0Available.forEach((b0, b0i)=>{
+                    const gearsB1Available = [...gearsB0Available]
+                    gearsB1Available.splice(b0i, 1)
                     gearCombination["b"] = [b0] 
 
-                    remainingGears.forEach((b1, b1i)=>{
-                        remainingGears.splice(b1i, 1)
+                    gearsB1Available.forEach((b1, b1i)=>{
+                        const gearsC0Available = [...gearsB1Available]
+                        gearsC0Available.splice(b1i, 1)
                         gearCombination["b"].push( b1 ) 
                     
-                        remainingGears.forEach((c0, c0i)=>{
-                            remainingGears.splice(c0i, 1)
+                        gearsC0Available.forEach((c0)=>{
+                            
                             gearCombination["c"] = [c0, null]
 
                             if(!gearsLayout[2]){
@@ -103,27 +108,32 @@ function createGearsLayout(gearsAvailable = []){
                     })
                 })
             })
+            // console.log('layout 2', gearsLayout[2].length)
+
         }
         if(layout == 'layout_3'){
             gearsAvailable.forEach((a0 ,a0i)=>{
-                const remainingGears = [...gearsAvailable]
-                remainingGears.splice(a0i, 1)
+                const gearsA1Available = [...gearsAvailable]
+                gearsA1Available.splice(a0i, 1)
         
                 let gearCombination = {a:[a0]}
                 
-                remainingGears.forEach((a1, a1i)=>{
-                    remainingGears.splice(a1i, 1)
+                gearsA1Available.forEach((a1, a1i)=>{
+                    const gearsB0Available = [...gearsA1Available]
+                    gearsB0Available.splice(a1i, 1)
                     gearCombination["a"].push(a1)
 
-                    remainingGears.forEach((b0, b0i)=>{
-                        remainingGears.splice(b0i, 1)
+                    gearsB0Available.forEach((b0, b0i)=>{
+                        const gearsB1Available = [...gearsB0Available]
+                        gearsB1Available.splice(b0i, 1)
                         gearCombination["b"]=  [b0] 
                     
-                        remainingGears.forEach((b1, b1i)=>{
-                            remainingGears.splice(b1i, 1)
+                        gearsB1Available.forEach((b1, b1i)=>{
+                            const gearsC1Available = [...gearsB1Available]
+                            gearsC1Available.splice(b1i, 1)
                             gearCombination["b"].push(b1)
-                            remainingGears.forEach((c1, c1i)=>{
-                                remainingGears.splice(c1i, 1)
+
+                            gearsC1Available.forEach((c1, c1i)=>{
                                 gearCombination["c"]=[null, c1]
                                 if(!gearsLayout[3]){
                                     gearsLayout[3] = []
@@ -138,6 +148,8 @@ function createGearsLayout(gearsAvailable = []){
                     })
                 })
             })
+            // console.log('layout 3', gearsLayout[3].length)
+
         }
 
         return gearsLayout
