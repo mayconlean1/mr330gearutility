@@ -1,4 +1,4 @@
-const searchPitchTarget = require('./searchPitchTarget')
+const initGearsApp = require('./initGearApp')
 
 const targetPitch = 1.587
 const range = 0.001
@@ -9,6 +9,10 @@ const gearsAvailable = [
     50, 42, 40, 33, 30
 ]
 
-const gears = searchPitchTarget({gearsAvailable, targetPitch, range})
+const gearsApp = initGearsApp(gearsAvailable)
 
-console.log(gears)
+gearsApp.setTargetPitch(1.75)
+const gears = gearsApp.searchBestCombinations(3, 0.001)
+
+console.log(gears.layout1)
+

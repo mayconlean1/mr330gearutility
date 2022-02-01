@@ -1,35 +1,13 @@
-const createGearsLayout = require('./createGearLayout')
-const createGearsData = require('./createGearData')
 
 module.exports= searchPitchTarget
 
-function searchPitchTarget(data={ gearsAvailable :[],targetPitch:Number, range:0.001}){
+function searchPitchTarget(data={ gearsDataLayout :[],targetPitch:Number, range:0.001}){
     const defaultData = {gearsAvailable :[],targetPitch:Number, range:0.001, ...data}
-    const {gearsAvailable , targetPitch, range} = defaultData
+    const {gearsDataLayout , targetPitch, range} = defaultData
 
-    const gearsDataLayout = createDataLayouts(gearsAvailable)
     const bestCombinations = searchBestCombination(gearsDataLayout, targetPitch, range)
 
     return bestCombinations
-
-    function createDataLayouts(gearsAvailable=[]){
-        const gearsLayout = createGearsLayout(gearsAvailable)
-        const gearsDataLayout = {}
-       
-        for (let indexLayout in gearsLayout){
-            const gearLayout = gearsLayout[indexLayout]
-            gearLayout.forEach(layout =>{
-                if(!gearsDataLayout[indexLayout]){
-                    gearsDataLayout[indexLayout] = []
-                }
-                gearsDataLayout[indexLayout].push(createGearsData({gearPosition:layout}))
-                
-            })  
-        }
-
-        return gearsDataLayout
-
-    }
 
     function searchBestCombination(gearsDataLayout={},targetPitch=Number, range=Number){
         // targetPitch = 1.587
