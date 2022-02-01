@@ -13,20 +13,22 @@ function createGearsLayout(gearsAvailable = []){
 
         
         if(layout == 'layout_0'){
+
             gearsAvailable.forEach((a1 ,a1i)=>{
-                const remainingGears = [...gearsAvailable]
-                remainingGears.splice(a1i, 1)
-        
+                const gearsBAvailable = [...gearsAvailable]
                 let gearCombination = {a:[undefined, a1]}
+                // console.log(gearCombination)
+                gearsBAvailable.splice(a1i, 1)
         
-                remainingGears.forEach((b1, b1i)=>{
+                gearsBAvailable.forEach((b1, b1i)=>{
+                    gearCombination['b'] = [undefined , b1]
+                    // console.log('for b', b1)
+                    const gearsCAvailable = [...gearsBAvailable]
+                    gearsCAvailable.splice(b1i, 1)
+                    
+                    gearsCAvailable.forEach((c1, c1i)=>{
         
-                    remainingGears.splice(b1i, 1)
-                    gearCombination["b"] = [undefined, b1]
-        
-                    remainingGears.forEach((c1, c1i)=>{
-        
-                        remainingGears.splice(c1i, 1)
+                        // remainingGears.splice(c1i, 1)
         
                         gearCombination["c"] = [null, c1]
                         if(!gearsLayout[0]){

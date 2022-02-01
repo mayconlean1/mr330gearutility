@@ -13,9 +13,12 @@ const gearsAvailable = [
 
 const gearsLayout = createGearsLayout(gearsAvailable)
 const gearsData = []
-gearsLayout[3].forEach(layout =>{
-    gearsData.push(createGearsData({gearPosition:layout}))
-})
+
+// gearsLayout[0].forEach(layout =>{
+//     gearsData.push(createGearsData({gearPosition:layout}))
+// })
+// console.log(gearsLayout[1])
+
 // const gearsData = []
 // gearsLayout[3].forEach(layout =>{
 //     gearsData.push(createGearsData({gearPosition:layout}))
