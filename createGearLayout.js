@@ -11,25 +11,22 @@ function createGearsLayout(gearsAvailable = []){
     function generateAssemblies(layout=''){
         const gearsLayout = {}
 
-        
         if(layout == 'layout_0'){
 
             gearsAvailable.forEach((a1 ,a1i)=>{
-                const gearsBAvailable = [...gearsAvailable]
                 let gearCombination = {a:[undefined, a1]}
-                // console.log(gearCombination)
+
+                const gearsBAvailable = [...gearsAvailable]
                 gearsBAvailable.splice(a1i, 1)
         
                 gearsBAvailable.forEach((b1, b1i)=>{
                     gearCombination['b'] = [undefined , b1]
-                    // console.log('for b', b1)
+                    
                     const gearsCAvailable = [...gearsBAvailable]
                     gearsCAvailable.splice(b1i, 1)
                     
                     gearsCAvailable.forEach((c1, c1i)=>{
-        
-                        // remainingGears.splice(c1i, 1)
-        
+                
                         gearCombination["c"] = [null, c1]
                         if(!gearsLayout[0]){
                             gearsLayout[0] = []
@@ -45,23 +42,23 @@ function createGearsLayout(gearsAvailable = []){
         }
         else if(layout == 'layout_1'){
             gearsAvailable.forEach((a0 ,a0i)=>{
-                const remainingGears = [...gearsAvailable]
-                remainingGears.splice(a0i, 1)
+                const gearsA1Available = [...gearsAvailable]
+                gearsA1Available.splice(a0i, 1)
         
                 let gearCombination = {a:[a0]}
         
-                remainingGears.forEach((a1, a1i)=>{
-        
-                    remainingGears.splice(a1i, 1)
+                gearsA1Available.forEach((a1, a1i)=>{
+                    const gearsB0Available = [...gearsA1Available] 
+                    gearsB0Available.splice(a1i, 1)
                     gearCombination["a"].push(a1) 
         
-                    remainingGears.forEach((b0, b0i)=>{
-                        remainingGears.splice(b0i, 1)
+                    gearsB0Available.forEach((b0, b0i)=>{
+                        const gearsC0Available = [...gearsB0Available]
+                        gearsC0Available.splice(b0i, 1)
                         gearCombination["b"] = [b0, undefined] 
 
-                        remainingGears.forEach((c0, c0i)=>{
+                        gearsC0Available.forEach((c0)=>{
         
-                            remainingGears.splice(c0i, 1)
                             gearCombination["c"] = [c0, null]
 
                             if(!gearsLayout[1]){
