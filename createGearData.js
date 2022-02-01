@@ -1,5 +1,6 @@
-module.exports = {
-    createGearsData(data = {gearPosition:{}, latheScrewPitch:2, gearLatheDefault:40}){
+module.exports = createGearsData
+
+function  createGearsData(data = {gearPosition:{}, latheScrewPitch:2, gearLatheDefault:40}){
         const defaultData = {latheScrewPitch: 2,gearLatheDefault:40, ...data}
         const {gearPosition, latheScrewPitch, gearLatheDefault} = defaultData
         gearPosition['default'] = gearLatheDefault
@@ -73,4 +74,3 @@ module.exports = {
             }
         }
     }
-}
