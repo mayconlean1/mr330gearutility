@@ -2,7 +2,7 @@ const createGearsData = require('./createGearData')
 const createGearsLayout = require('./createGearLayout')
 
 const targetPitch = 3.2
-const range = 0.001
+const range = 0.01
 
 const gearsAvailable = [
     90, 90, 80, 80,
@@ -10,35 +10,26 @@ const gearsAvailable = [
     50, 42, 40, 33, 30
 ]
 
+const targetLayout = searchPitchTarget({gearsAvailable, targetPitch})
 
-const gearsLayout = createGearsLayout(gearsAvailable)
-const gearsData = []
-
-// gearsLayout[0].forEach(layout =>{
-//     gearsData.push(createGearsData({gearPosition:layout}))
-// })
-// console.log(gearsLayout[1])
-
-// const gearsData = []
-// gearsLayout[3].forEach(layout =>{
-//     gearsData.push(createGearsData({gearPosition:layout}))
-// })
-function joinArrays(object={}){
-    const array = Object.values( object).reduce((acc, schema)=>{
-        acc.push(schema)
-        return acc
-    },[])
-    return array[0]
+function searchPitchTarget(data={ gearsAvailable :[],targetPitch:Number, range:0.01}){
+    const defaultData = {gearsAvailable :[],targetPitch:Number, range:0.01, ...data}
+    const {gearsAvailable , targetPitch, range} = defaultData
+    
+    const gearsLayout = createGearsLayout(gearsAvailable)
+    const gearsDataLayout = {}
+   
+    for (let indexLayout in gearsLayout){
+        const gearLayout = gearsLayout[indexLayout]
+        gearLayout.forEach(layout =>{
+            if(!gearsDataLayout[indexLayout]){
+                gearsDataLayout[indexLayout] = []
+            }
+            gearsDataLayout[indexLayout].push(createGearsData({gearPosition:layout}))
+            
+        })  
+    }
+    console.log(gearsDataLayout[1][500].getSchemas())
+    
 
 }
-// console.log(gearsLayout[0])
-
-// const gearPosition = {
-//     'a': [50 , 80],
-//     'b': [90, 33 ],
-//     'c' : [null, 90] 
-// }
-
-// const currentGears = createGearsData({gearPosition})
-
-// console.log(currentGears.getSchemas())
