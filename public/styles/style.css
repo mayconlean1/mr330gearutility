@@ -3,3 +3,91 @@
     padding: 0;
     box-sizing: border-box;
   }
+
+.content{
+  height: 100vh;
+  width: 100vw;
+
+  display: grid;
+  grid-template-columns: 0.5fr 1fr 1fr;
+  grid-template-rows: 10% 90%;
+  grid-template-areas: 
+    'header header header' 
+    'main  aside aside'
+  ;
+}
+
+header{
+  background-color: aquamarine;
+  padding: 1rem;
+  grid-area: header;
+}
+
+main{
+  grid-area: main;
+  /* background-color:yellowgreen; */
+}
+
+
+input, button, select{
+  width: 4.5rem;
+  padding: 0.5rem;
+}
+button{
+  cursor: pointer;
+}
+
+.group{
+  padding:1rem;
+  display:flex;
+  flex-direction: column;
+}
+
+.field{
+  width: 100%;
+  display:flex;
+  padding: 1rem;
+  
+}
+
+.titlefield{
+  width: 50%;
+}
+
+.group.submit{
+  align-items: center;
+}
+
+.group.submit>button{
+  background-color:rgba(173, 216, 230, 0.527);
+  width: 100%;
+  font-size: larger;
+}
+
+.group.submit>button:hover{
+  background-color:lightblue;
+  width: 100%;
+}
+.group.submit>button:active{
+  background-color:blue;
+  color:white;
+  width: 100%;
+}
+
+
+aside{
+  grid-area: aside;
+  /* background-color: pink; */
+  display:flex;
+  width: 100%;
+}
+
+.combinations{
+  /* background-color:green; */
+  width: 50%;
+}
+
+.schema{
+  /* background-color: blue; */
+  width: 50%;
+}

@@ -10,6 +10,98 @@
     <link rel="stylesheet" href="/styles/style.css">
 </head>
 <body>
-    teste
+    <div class="content">
+    
+        <header>
+            <h1>
+                Manrod 330 Gears utility
+            </h1>
+        </header>
+        <main>
+            <div class="group latheInfo">
+                <h2>Configuração do torno</h2>
+                <div class="field latheScrewPitch">
+                    <div class="titlefield">
+                        Passo parafuso avanço (mm)
+                    </div>
+                    
+                    <input type="number" name="latheScrewPitch" id="input_latheScrewPitch" value="2" min="0.1">
+                </div>
+                <div class="field firstGear">
+                    <div class="titlefield">
+                        Primeira engrenagem (dentes)
+                    </div>
+                    
+                    <input type="number" name="latheScrewPitch" id="input_latheScrewPitch" value="40" min="1"> 
+                </div>
+                <hr/>
+            </div>
+            <div class="group gearsAvaliable">
+                <h2>Conjunto de engrenagens</h2>
+                <div class="field addGear">
+                    <div class="titlefield">
+                        Passo parafuso avanço (dentes)
+                    </div>
+                    
+                    <input type="number">
+                    <button>Add</button>
+                </div>
+                <div class="field addedGears">
+                    <div class="titlefield">
+                        Remover engrenagem
+                    </div>
+                
+                        <select name="gearsAvaliable" id="select_gearsAvaliable">
+                            <option value="30">30</option>
+                            <option value="32">32</option>
+                        </select>
+                    
+                    <button>Remover</button>
+                </div>
+                <hr>
+            </div>
+            <div class="group searchData">
+                <h2>Busca</h2>
+                <div class="field pitchTarget">
+                    <div class="titlefield">
+                        Passo Desejado (mm)
+                    </div>
+                    
+                    <input type="number" name="latheScrewPitch" id="input_latheScrewPitch" min="0.01">
+                    
+                </div>
+                <div class="field range">
+                    <div class="titlefield">
+                        Tolerancia (mm)
+                    </div>
+                    
+                    <input type="number" name="latheScrewPitch" id="input_latheScrewPitch" min="0">
+                </div>
+                <hr>
+            </div>
+            <div class="group submit">
+                <button>Buscar</button>
+            </div>
+            
+        </main>
+        <aside>
+            <div class="group combinations">
+                <h2>
+                    Combinações possiveis
+                </h2>
+                <hr>
+            </div>
+            <div class="group schema">
+                <h2>
+                    Esquemas
+                </h2>
+                <hr>
+            </div>
+            
+        </aside>
+        
+        
+    </div>
+
 </body>
 </html>
