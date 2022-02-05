@@ -14,5 +14,5 @@ const gearsApp = initGearsApp(gearsAvailable)
 gearsApp.setTargetPitch(1.75)
 const gears = gearsApp.searchBestCombinations(targetPitch, range)
 
-console.log(gears)
+console.log(gears.layout1)
 

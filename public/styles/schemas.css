@@ -1,0 +1,42 @@
+
+.schema{
+    /* background-color: blue; */
+    width: 50%;
+    
+}
+
+.layoutBaseSchema{
+    
+    padding: 1rem;
+    /* background-color:red; */
+    display:grid;
+    width: 45%;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 0.5rem;
+
+    align-items: center;
+    justify-content: center;
+}
+
+
+.schemaGear{
+    background-color:lightgray;
+    padding:1rem;
+    /* width: 50%; */
+}
+
+
+.gearId{
+    font-size: large;
+}
+
+.selectGearCombination{
+    font-size:xx-large;
+    text-align: center;
+}
+
+.activeLayout{
+    background-color:blue;
+    color: white;
+}

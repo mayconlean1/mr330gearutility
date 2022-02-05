@@ -1,0 +1,36 @@
+.combinations{
+    /* background-color:green; */
+    width: 50%;
+}
+  
+  
+.layouts{
+    display:flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding-top: 1rem;
+}
+  
+.layout{
+    padding:0.5rem;
+    display:flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    background-color:rgba(0, 0, 0, 0.144);
+
+}
+
+.layout:hover{
+    background-color:lightblue;
+}
+
+.layoutCombination{
+    cursor:pointer;
+
+    padding:0.2rem;
+}
+
+.layoutCombination:hover{
+    background-color: blue;
+    color: white;
+}
