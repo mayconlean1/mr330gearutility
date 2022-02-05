@@ -35,6 +35,11 @@ input, button, select{
 }
 button{
   cursor: pointer;
+  background-color:rgba(173, 216, 230, 0.527);
+}
+
+button:hover{
+  background-color:lightblue;
 }
 
 aside{
