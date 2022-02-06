@@ -12,4 +12,9 @@ app.get('/',(req,res)=>{
     return res.status(400).render('index')
 })
 
+app.get('/search',(req,res)=>{
+    console.log(req.query)
+    return res.status(400).send('send')
+})
+
 module.exports = app
