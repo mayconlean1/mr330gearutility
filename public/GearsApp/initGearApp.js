@@ -1,10 +1,5 @@
-const createDataLayouts = require('./createGearDataLayout')
-const searchPitchTarget = require('./searchPitchTarget')
-
-module.exports = initGearsApp
-
-function initGearsApp(data={ gearsAvailable:[],latheScrewPitch:2,gearLatheDefault:40 , targetPitch:0 , range: 0.001}){
-    const dataDefault = {gearsAvailable:[],latheScrewPitch:2,gearLatheDefault:40,targetPitch:0 , range: 0.001, ...data}
+function initGearsApp(data={ gearsAvailable:[],latheScrewPitch:2,gearLatheDefault:40 , targetPitch:1 , range: 0.001}){
+    const dataDefault = {gearsAvailable:[],latheScrewPitch:2,gearLatheDefault:40,targetPitch:1 , range: 0.001, ...data}
 
     let {
         gearsAvailable,

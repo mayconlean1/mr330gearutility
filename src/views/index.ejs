@@ -12,7 +12,15 @@
     <link rel="stylesheet" href="/styles/layouts.css">
     <link rel="stylesheet" href="/styles/schemas.css">
 
+
+    <script src="/GearsApp/createGearData.js" defer></script>
+    <script src="/GearsApp/createGearDataLayout.js" defer></script>
+    <script src="/GearsApp/createGearLayout.js" defer></script>
+    <script src="/GearsApp/initGearApp.js" defer></script>
+    <script src="/GearsApp/searchPitchTarget.js" defer></script>
+
     <script src="/scripts/script.js" defer></script>
+
 </head>
 <body>
     <div class="content">
@@ -30,14 +38,14 @@
                         Passo parafuso avanço (mm)
                     </div>
                     
-                    <input type="number" name="latheScrewPitch" id="input_latheScrewPitch" value="2" min="1" required >
+                    <input type="number" name="latheScrewPitch" id="input_latheScrewPitch" value="2" min="1" onchange="changeLatheScrewPitch(this)" >
                 </div>
                 <div class="field firstGear">
                     <div class="titlefield">
                         Primeira engrenagem (dentes)
                     </div>
                     
-                    <input type="number" name="firstGear" id="id_firstGear" value="40" min="1" required> 
+                    <input type="number" name="firstGear" id="id_firstGear" value="40" min="1" onchange="changeFirstGear(this)"> 
                 </div>
                 <hr/>
             </div>
@@ -84,7 +92,7 @@
                         Passo Desejado (mm)
                     </div>
                     
-                    <input type="number" name="pitch" id="input_pitch" min="0.01" value="1" required>
+                    <input type="number" name="pitch" id="input_pitch" min="0.01" value="1" onchange="changeTargetPitch(this)">
                     
                 </div>
                 <div class="field range">
@@ -92,7 +100,7 @@
                         Tolerancia (mm)
                     </div>
                     
-                    <input type="number" name="range" id="input_range" min="0" value="0.001" required>
+                    <input type="number" name="range" id="input_range" min="0" value="0.001" onchange="changeToleranceLimit(this)">
                 </div>
                 <hr>
             </div>

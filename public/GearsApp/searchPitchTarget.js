@@ -1,6 +1,3 @@
-
-module.exports= searchPitchTarget
-
 function searchPitchTarget(data={ gearsDataLayout :[],targetPitch:Number, range:0.001}){
     const defaultData = {gearsAvailable :[],targetPitch:Number, range:0.001, ...data}
     const {gearsDataLayout , targetPitch, range} = defaultData

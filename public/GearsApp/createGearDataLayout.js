@@ -1,8 +1,3 @@
-const createGearsLayout = require('./createGearLayout')
-const createGearsData = require('./createGearData')
-
-module.exports = createDataLayouts
-
 function createDataLayouts(data={gearsAvailable:[] ,  latheScrewPitch:2, gearLatheDefault:40}){
     const defaultData = {gearsAvailable:[] ,  latheScrewPitch:2, gearLatheDefault:40, ...data}
     const{gearsAvailable,  latheScrewPitch, gearLatheDefault} = defaultData

@@ -1,5 +1,3 @@
-module.exports = createGearsLayout
-
 function createGearsLayout(gearsAvailable = []){
     const gearsLayout = { 
         ...generateAssemblies('layout_0'),
