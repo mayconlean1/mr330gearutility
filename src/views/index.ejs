@@ -22,87 +22,86 @@
                 Manrod 330 Gears utility
             </h1>
         </header>
-        <form action="/search" method="get">
-            <main>
-                <div class="group latheInfo">
-                    <h2>Configuração do torno</h2>
-                    <div class="field latheScrewPitch">
-                        <div class="titlefield">
-                            Passo parafuso avanço (mm)
-                        </div>
-                        
-                        <input type="number" name="latheScrewPitch" id="input_latheScrewPitch" value="2" min="1" required >
+        <main>
+            <div class="group latheInfo">
+                <h2>Configuração do torno</h2>
+                <div class="field latheScrewPitch">
+                    <div class="titlefield">
+                        Passo parafuso avanço (mm)
                     </div>
-                    <div class="field firstGear">
-                        <div class="titlefield">
-                            Primeira engrenagem (dentes)
-                        </div>
-                        
-                        <input type="number" name="firstGear" id="id_firstGear" value="40" min="1" required> 
-                    </div>
-                    <hr/>
-                </div>
-                <div class="group gearsAvaliable">
-                    <h2>Conjunto de engrenagens</h2>
-                    <div class="field addGear">
-                        <div class="titlefield">
-                            Adicionar engrenagem (dentes)
-                        </div>
-                        
-                        <input type="number" min="1" value='1' id="inputAddGear">
-                        <button onclick="addGear()">Add</button>
-                    </div>
-                    <div class="field addedGears">
-                        <div class="titlefield">
-                            Remover engrenagem
-                        </div>
                     
-                            <select id="select_gearsAvaliable">
-                                <option value="90">90</option>
-                                <option value="90">90</option>
-                                <option value="80">80</option>
-                                <option value="80">80</option>
-                                <option value="75">75</option>
-                                <option value="70">70</option>
-                                <option value="66">66</option>
-                                <option value="60">60</option>
-                                <option value="50">50</option>
-                                <option value="42">42</option>
-                                <option value="40">40</option>
-                                <option value="33">33</option>
-                                <option value="30">30</option>
-                                
-                            </select>
-                        
-                        <button onclick='removeGear()'>Remover</button>
-                    </div>
-                    <hr>
+                    <input type="number" name="latheScrewPitch" id="input_latheScrewPitch" value="2" min="1" required >
                 </div>
-                <div class="group searchData">
-                    <h2>Busca</h2>
-                    <div class="field pitchTarget">
-                        <div class="titlefield">
-                            Passo Desejado (mm)
-                        </div>
-                        
-                        <input type="number" name="pitch" id="input_pitch" min="0.01" value="1" required>
-                        
+                <div class="field firstGear">
+                    <div class="titlefield">
+                        Primeira engrenagem (dentes)
                     </div>
-                    <div class="field range">
-                        <div class="titlefield">
-                            Tolerancia (mm)
-                        </div>
-                        
-                        <input type="number" name="range" id="input_range" min="0" value="0.001" required>
+                    
+                    <input type="number" name="firstGear" id="id_firstGear" value="40" min="1" required> 
+                </div>
+                <hr/>
+            </div>
+            <div class="group gearsAvaliable">
+                <h2>Conjunto de engrenagens</h2>
+                <div class="field addGear">
+                    <div class="titlefield">
+                        Adicionar engrenagem (dentes)
                     </div>
-                    <hr>
+                    
+                    <input type="number" min="1" value='1' id="inputAddGear">
+                    <button onclick="addGear()">Add</button>
                 </div>
-                <div class="group submit">
-                    <button onclick='search()'>Buscar</button>
-                </div>
+                <div class="field addedGears">
+                    <div class="titlefield">
+                        Remover engrenagem
+                    </div>
                 
-            </main>
-        </form>
+                        <select id="select_gearsAvaliable">
+                            <option value="90">90</option>
+                            <option value="90">90</option>
+                            <option value="80">80</option>
+                            <option value="80">80</option>
+                            <option value="75">75</option>
+                            <option value="70">70</option>
+                            <option value="66">66</option>
+                            <option value="60">60</option>
+                            <option value="50">50</option>
+                            <option value="42">42</option>
+                            <option value="40">40</option>
+                            <option value="33">33</option>
+                            <option value="30">30</option>
+                            
+                        </select>
+                    
+                    <button onclick='removeGear()'>Remover</button>
+                </div>
+                <hr>
+            </div>
+            <div class="group searchData">
+                <h2>Busca</h2>
+                <div class="field pitchTarget">
+                    <div class="titlefield">
+                        Passo Desejado (mm)
+                    </div>
+                    
+                    <input type="number" name="pitch" id="input_pitch" min="0.01" value="1" required>
+                    
+                </div>
+                <div class="field range">
+                    <div class="titlefield">
+                        Tolerancia (mm)
+                    </div>
+                    
+                    <input type="number" name="range" id="input_range" min="0" value="0.001" required>
+                </div>
+                <hr>
+            </div>
+            <div class="group submit">
+                <button onclick='search()'>Buscar</button>
+            </div>
+            
+        </main>
+    
         <aside>
             <div class="group combinations">
                 <h2>

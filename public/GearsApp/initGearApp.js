@@ -3,14 +3,18 @@ const searchPitchTarget = require('./searchPitchTarget')
 
 module.exports = initGearsApp
 
-function initGearsApp(gearsAvailable=[]){
-    let latheScrewPitch = 2
-    let gearLatheDefault = 40
+function initGearsApp(data={ gearsAvailable:[],latheScrewPitch:2,gearLatheDefault:40 , targetPitch:0 , range: 0.001}){
+    const dataDefault = {gearsAvailable:[],latheScrewPitch:2,gearLatheDefault:40,targetPitch:0 , range: 0.001, ...data}
 
-    let targetPitch
-    let range = 0.001 // tolerance limit
+    let {
+        gearsAvailable,
+        latheScrewPitch,
+        gearLatheDefault,
+        targetPitch , 
+        range} 
+    = dataDefault
 
-    let gearsDataLayout = createDataLayouts({gearsAvailable})
+    let gearsDataLayout = createDataLayouts({gearsAvailable, latheScrewPitch,gearLatheDefault})
     let bestCombinations
 
     return{
@@ -19,7 +23,7 @@ function initGearsApp(gearsAvailable=[]){
         },
         setAvailable(array=[]){
             gearsAvailable = array
-            gearsDataLayout = createDataLayouts({gearsAvailable})
+            gearsDataLayout = createDataLayouts({gearsAvailable, latheScrewPitch,gearLatheDefault})
         },
 
         getLatheScrewPitch (){

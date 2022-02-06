@@ -1,10 +1,5 @@
 let gearsAvailable = []
 
-const form = document.querySelector('form')
-form.addEventListener('submit', event=>{
-    event.preventDefault()
-})
-
 function addGear(){
     
     const inputValue = document.querySelector('#inputAddGear').value
@@ -27,20 +22,6 @@ function removeGear(){
 function search(){
     
     createGearsArray()
-    createGearsAvaliableInput()
-    form.submit()
-
-    function createGearsAvaliableInput(){
-        const newInput= document.createElement('input')
-        newInput.type = 'text'
-        newInput.value = gearsAvailable.join(';')
-        newInput.hidden = true
-        newInput.name = 'gearsAvailable'
-    
-        const main = document.querySelector('main')
-        main.appendChild(newInput)
-
-    }
 
     function createGearsArray(){
         const select = document.querySelector('#select_gearsAvaliable')

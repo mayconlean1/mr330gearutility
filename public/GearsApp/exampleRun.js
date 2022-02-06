@@ -9,7 +9,7 @@ const gearsAvailable = [
     50, 42, 40, 33, 30
 ]
 
-const gearsApp = initGearsApp(gearsAvailable)
+const gearsApp = initGearsApp({gearsAvailable})
 
 gearsApp.setTargetPitch(1.75)
 const gears = gearsApp.searchBestCombinations(targetPitch, range)
