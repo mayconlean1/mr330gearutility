@@ -17,11 +17,23 @@
     flex-direction: column;
     gap: 0.3rem;
     background-color:rgba(0, 0, 0, 0.144);
-
+    max-height: 18rem;
 }
 
 .layout:hover{
     background-color:lightblue;
+}
+
+.layoutDescription{
+   cursor: pointer;
+   display:flex;
+   justify-content: space-between;
+}
+
+.layoutCombinations{
+    height:0;
+    overflow: hidden;
+    padding-left: 1rem;
 }
 
 .layoutCombination{

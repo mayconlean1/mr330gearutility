@@ -43,7 +43,50 @@ function changeToleranceLimit(self){
 
 function search(){   
     const gears = gearsApp.searchBestCombinations()
-    console.log(gears)
+
+    createDivLayouts()
+    function createDivLayouts(){
+        const divLayouts = document.querySelector('.layouts')
+        divLayouts.innerHTML = ''
+
+        let layoutPosition = 0
+        for(let indexLayout in gears){
+            const layout = gears[indexLayout]
+            console.log(layout.length)
+
+            divLayouts.innerHTML += `
+            <div class="layout l${layoutPosition}">
+            <div class="layoutDescription" onclick="expandCollapseWindow('l${layoutPosition}window')" onmouseover="showGenericSchema('${indexLayout}')">
+                <div class="layoutDescription-left">
+                    Layout ${layoutPosition} (<span>${layout.length}</span>  combinações)
+                </div>
+                <div class="layoutDescription-right">
+                    <img id="l${layoutPosition}window_icon" src="/svg/expand_more_black_24dp.svg" alt="expandSVG">
+                </div>
+            </div>
+            <div class="layoutCombinations" id="l${layoutPosition}window">
+                ${createDivGearcombination(layout, indexLayout)}
+            </div>
+        </div>
+            `
+
+            layoutPosition ++
+        }
+
+        function createDivGearcombination(layout, indexLayout){
+            let divLayoutcombination= ''
+            layout.forEach(gearData =>{
+                const strMounting = JSON.stringify( gearData.mounting)
+                divLayoutcombination +=  `
+                <div class="layoutCombination" onclick="showSchema(this, '${indexLayout}')">
+                    <span> ${strMounting} </span> <span>passo: ${gearData.step} mm</span>
+                </div>
+                `
+            })
+            return divLayoutcombination
+        }
+
+    }
 }
 
 function createGearsArray(){
@@ -58,4 +101,26 @@ function createGearsArray(){
             gearsAvailable.push(gear.value)
         }
     }
+}
+
+function expandCollapseWindow(id){
+    const window = document.getElementById(id)
+    const img_icon= document.getElementById(id+'_icon')
+    if(window.clientHeight == 0){
+        window.style.height = 'auto'
+        window.style.overflow = 'auto'
+        img_icon.src = '/svg/expand_less_black_24dp.svg'
+    }else{
+        img_icon.src = '/svg/expand_more_black_24dp.svg'
+        window.style.height = '0px'
+        window.style.overflow = 'hidden'
+    }
+}
+
+function showSchema(self, indexLayout){
+    console.log(self.children[0], indexLayout)
+}
+
+function showGenericSchema (indexLayout){
+    console.log('generic schema', indexLayout)
 }

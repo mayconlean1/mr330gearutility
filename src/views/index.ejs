@@ -119,43 +119,38 @@
 
                 <div class="layouts">
                     <div class="layout l0">
-                        <div class="layoutDescription">
-                            Layout 0 (<span>x</span>  combinações)
+                        <div class="layoutDescription" onclick="expandCollapseWindow('l0window')" onmouseover="showGenericSchema()">
+                            <div class="layoutDescription-left">
+                                Layout 0 (<span>x</span>  combinações)
+                            </div>
+                            <div class="layoutDescription-right">
+                                <img id="l0window_icon" src="/svg/expand_more_black_24dp.svg" alt="expandSVG">
+                            </div>
                         </div>
-                        <div class="layoutCombination">
-                            G56 a 564s d4654
+                        <div class="layoutCombinations" id="l0window">
+                            <div class="layoutCombination" onclick="showSchema('combination')">
+                                G56 a 564s d4654
+                            </div>
                         </div>
                     </div>
+
                     <div class="layout l1">
-                        <div class="layoutDescription">
-                            Layout 1 (<span>x</span>  combinações) 
+                        <div class="layoutDescription" onclick="expandCollapseWindow('l1window')">
+                            <div class="layoutDescription-left">
+                                Layout 1 (<span>x</span>  combinações)
+                            </div>
+                            <div class="layoutDescription-right">
+                                <img id="l1window_icon" src="/svg/expand_more_black_24dp.svg" alt="expandSVG">
+                            </div>
                         </div>
-                        <div class="layoutCombination">
-                            G56 a 564s d4654
+                        <div class="layoutCombinations" id="l1window">
+                            <div class="layoutCombination" onclick="showSchema('combination')">
+                                G56 a 564s d4654
+                            </div>
                         </div>
-
                     </div>
-                    <div class="layout l2">
-                        <div class="layoutDescription">
-                            Layout 2 (<span>x</span>  combinações)
-                        </div>
-                        <div class="layoutCombination">
-                            G56 a 564s d4654
-                        </div>
-
-                    </div>
-                    <div class="layout l3">
-                        <div class="layoutDescription">
-                            Layout 3 (<span>x</span>  combinações)
-                        </div>
-                        <div class="layoutCombination">
-                            G56 a 564s d4654
-                        </div>
-                        <div class="layoutCombination">
-                            G56 a 564s d4654
-                        </div>
-
-                    </div>
+                    
+                    
                 </div>
             </div>
             <div class="group schema">
