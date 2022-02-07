@@ -1,3 +1,5 @@
+let combinationSelected = false
+
 let gearsAvailable = []
 createGearsArray()
 const gearsApp = initGearsApp({gearsAvailable})
@@ -118,9 +120,32 @@ function expandCollapseWindow(id){
 }
 
 function showSchema(self, indexLayout){
-    console.log(self.children[0], indexLayout)
+    const schema = JSON.parse(self.children[0].textContent)
+    console.log(self.children[0].textContent, indexLayout,schema )
+
+    const allLayoutCombination = document.querySelectorAll('.layoutCombination')
+    allLayoutCombination.forEach(l => {
+        l.classList.remove ('selectLayout')
+    })
+
+    self.classList.add('selectLayout')
+    
+    createHtmlLayout(indexLayout, schema)
+
+    const pitch = self.children[1].textContent
+    console.log(pitch)
+
+    const infoCombinationStep = document.querySelector('.infoCombinationStep')
+    infoCombinationStep.innerHTML = pitch
+
+    combinationSelected = true
 }
 
+
 function showGenericSchema (indexLayout){
-    console.log('generic schema', indexLayout)
+    if(!combinationSelected){
+        createHtmlLayout(indexLayout)
+        const infoCombinationStep = document.querySelector('.infoCombinationStep')
+        infoCombinationStep.innerHTML = ''
+    }
 }

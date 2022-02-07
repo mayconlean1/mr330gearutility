@@ -19,6 +19,7 @@
     <script src="/GearsApp/initGearApp.js" defer></script>
     <script src="/GearsApp/searchPitchTarget.js" defer></script>
 
+    <script src="/scripts/createHtmlLayout.js" defer></script>
     <script src="/scripts/script.js" defer></script>
 
 </head>
@@ -100,7 +101,7 @@
                         Tolerancia (mm)
                     </div>
                     
-                    <input type="number" name="range" id="input_range" min="0" value="0.001" onchange="changeToleranceLimit(this)">
+                    <input type="number" name="range" id="input_range" min="0" value="0" onchange="changeToleranceLimit(this)">
                 </div>
                 <hr>
             </div>
@@ -118,38 +119,6 @@
                 <hr>
 
                 <div class="layouts">
-                    <div class="layout l0">
-                        <div class="layoutDescription" onclick="expandCollapseWindow('l0window')" onmouseover="showGenericSchema()">
-                            <div class="layoutDescription-left">
-                                Layout 0 (<span>x</span>  combinações)
-                            </div>
-                            <div class="layoutDescription-right">
-                                <img id="l0window_icon" src="/svg/expand_more_black_24dp.svg" alt="expandSVG">
-                            </div>
-                        </div>
-                        <div class="layoutCombinations" id="l0window">
-                            <div class="layoutCombination" onclick="showSchema('combination')">
-                                G56 a 564s d4654
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="layout l1">
-                        <div class="layoutDescription" onclick="expandCollapseWindow('l1window')">
-                            <div class="layoutDescription-left">
-                                Layout 1 (<span>x</span>  combinações)
-                            </div>
-                            <div class="layoutDescription-right">
-                                <img id="l1window_icon" src="/svg/expand_more_black_24dp.svg" alt="expandSVG">
-                            </div>
-                        </div>
-                        <div class="layoutCombinations" id="l1window">
-                            <div class="layoutCombination" onclick="showSchema('combination')">
-                                G56 a 564s d4654
-                            </div>
-                        </div>
-                    </div>
-                    
                     
                 </div>
             </div>
@@ -158,6 +127,9 @@
                     Esquemas
                 </h2>
                 <hr>
+                <div class="infoCombinationStep">
+                    Passo da combinação 1mm
+                </div>
                 <div class="layoutBaseSchema">
                     <div class="schemaGear gearGU">
                         <div class="gearId">
